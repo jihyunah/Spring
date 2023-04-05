@@ -6,12 +6,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="src/lib/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="src/lib/lombok.jar"/>
-	<classpathentry kind="lib" path="src/lib/spring-aop-5.3.23.jar"/>
-	<classpathentry kind="lib" path="src/lib/spring-beans-5.3.23.jar"/>
-	<classpathentry kind="lib" path="src/lib/spring-context-5.3.23.jar"/>
-	<classpathentry kind="lib" path="src/lib/spring-core-5.3.23.jar"/>
-	<classpathentry kind="lib" path="src/lib/spring-expression-5.3.23.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/spring-aop-5.3.23.jar"/>
+	<classpathentry kind="lib" path="lib/spring-beans-5.3.23.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-5.3.23.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-5.3.23.jar"/>
+	<classpathentry kind="lib" path="lib/spring-expression-5.3.23.jar"/>
+	<classpathentry kind="lib" path="lib/lombok.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

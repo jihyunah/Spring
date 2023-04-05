@@ -149,3 +149,4 @@
 2023-04-05 17:09:12,249 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
 2023-04-05 17:09:12,256 [Worker-24: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2023-04-05 17:09:12,257 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-05 20:28:26,343 [Worker-12: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
