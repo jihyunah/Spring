@@ -7,10 +7,9 @@
 	<!-- sample03 -->
 	<!-- getInstance란 말이 없어도 spring은 싱글톤이 기본! -->
 	<!-- scope: prototype, request, session, singleton ,,,,, prototype은 싱글톤이 아닌 각각 만들어주는 것. -->
-	<bean id="messageBean" class="sample03.MessageBeanKo" scope="prototype"></bean> 
 	
-	<!-- sample04 -->
-	<bean id="calcAdd" class="sample04.CalcAdd"></bean>
-	<bean id="calcMul" class="sample04.CalcMul"></bean>
-	<bean id="sungJukImpl" class="sample05.SungJukImpl"></bean>
+	<context:component-scan base-package="sample03"></context:component-scan> <!-- 어노테이션 사용한다는 것을 알려준다.  -->
+	<context:component-scan base-package="sample04"></context:component-scan>
+	<context:component-scan base-package="sample05"></context:component-scan>
+	
 </beans>

@@ -1,5 +1,8 @@
 package sample04;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CalcMul implements Calc {
 	//private int mul;
 	

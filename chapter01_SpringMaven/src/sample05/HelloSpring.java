@@ -1,20 +1,22 @@
-package sample04;
+package sample05;
+
+import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import sample04.Calc;
 
 public class HelloSpring {
 
 	public static void main(String[] args) {
-		// xml 파일 읽어라 
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-		Calc calc = (Calc) context.getBean("calcAdd"); //calc 빈을 생성하기. 
-		calc.calculate(25, 36); //함수 호출해오기.
 		
-		calc = context.getBean("calcMul", Calc.class);
-		calc.calculate(25, 36);
+		SungJuk sungjuk = (SungJuk) context.getBean("sungJukImpl"); //calc 빈을 생성하기. 
+		
+		
+		sungjuk.calc(); //함수 호출해오기.
+		sungjuk.display();
 	}
 
 }
