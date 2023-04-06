@@ -350,3 +350,43 @@
 2023-04-06 12:31:59,811 [Worker-151: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
 2023-04-06 12:31:59,811 [Worker-151: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2023-04-06 12:31:59,812 [Worker-151: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:36:43,863 [Worker-151: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:36:43,871 [Worker-151: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:36:43,872 [Worker-151: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:36:43,873 [Worker-151: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:37:27,930 [Worker-155: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:37:27,931 [Worker-155: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:37:27,932 [Worker-155: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:37:27,933 [Worker-155: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:38:31,849 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:38:31,854 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:38:31,855 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:38:31,855 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:38:36,044 [Worker-156: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:38:36,045 [Worker-156: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:38:36,047 [Worker-156: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:38:36,048 [Worker-156: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:38:53,033 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:38:53,036 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:38:53,037 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:38:53,037 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:39:20,924 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:39:20,924 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:39:20,925 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:39:20,926 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:41:13,893 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:41:13,897 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:41:13,898 [Worker-132: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:41:13,898 [Worker-132: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:46:11,176 [Worker-158: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:46:11,184 [Worker-158: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:46:11,185 [Worker-158: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:46:11,186 [Worker-158: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:46:24,329 [Worker-151: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:46:24,331 [Worker-151: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:46:24,332 [Worker-151: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:46:24,332 [Worker-151: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources
+2023-04-06 12:47:21,861 [Worker-158: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:47:21,861 [Worker-158: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/main/resources
+2023-04-06 12:47:21,862 [Worker-158: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-06 12:47:21,862 [Worker-158: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/study/Spring/workspace/Spring/chapter02_SpringMaven/src/test/resources

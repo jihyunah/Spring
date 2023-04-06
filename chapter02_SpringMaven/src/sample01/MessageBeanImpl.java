@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 
 
-@Component //bean 생성하는 어노테이션. --> 생성자는 자동호출됨.
+//@Component //bean 생성하는 어노테이션. --> 생성자는 자동호출됨.
 
 public class MessageBeanImpl implements MessageBean {
 	private String fruit; //생성자로 받아오기 
