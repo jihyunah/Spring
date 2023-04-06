@@ -12,10 +12,10 @@ public class HelloSpring {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		Calc calc = (Calc) context.getBean("calcAdd");
-		calc.calculate(25, 36);
+		calc.calculate();
 		
 		calc = (Calc) context.getBean("calcMul");
-		calc.calculate(25, 36);
+		calc.calculate();
 	}
 
 }

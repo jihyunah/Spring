@@ -7,7 +7,7 @@ public class CalcMul implements Calc {
 	private int x, y;
 	
 	@Override
-	public void calculate(int x, int y) {
+	public void calculate() {
 		System.out.println(x + " * " + y + " = " + (x*y));
 		System.out.println();
 

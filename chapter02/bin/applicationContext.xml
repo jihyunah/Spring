@@ -21,9 +21,7 @@
 		<constructor-arg>
 			<value>25</value>
 		</constructor-arg>
-		<constructor-arg>
-			<value>36</value>
-		</constructor-arg>
+		<constructor-arg value="36" />
 	</bean>
 	
 	<bean id="calcMul" class="sample02.CalcMul">
