@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 
 
-@Component //bean 생성 (생성자)
+// @Component //bean 생성 (생성자)
 public class CalcMul implements Calc {
 	private int x, y;
 	

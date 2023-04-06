@@ -42,6 +42,24 @@
 		<property name="eng" value="100" />
 		<property name="math" value="95" />
 	</bean>
-		
+	
+	<!-- sample 04 -->
+	<bean id="arrayList" class="java.util.ArrayList"></bean>
+	<!-- Main -->
+	<bean id="helloSpring" class="sample04.HelloSpring"></bean>
+	
+	
+	<bean id="sungJukInput" class="sample04.SungJukInput" scope="prototype"> <!-- 성적dto를 담는 input도 scope를 prototype으로 바꿔야한다. -->
+		<property name="sungJukDTO2" ref="sungJukDTO2"></property> <!-- setSungJukDTO2 메소드 명 -->
+		<property name="list" ref="arrayList"></property> 
+	</bean>
+	
+	<bean id="sungJukOutput" class="sample04.SungJukOutput">
+		<property name="list" ref="arrayList"></property>
+	</bean>
+	
+	<bean id="sungJukDTO2" class="sample04.SungJukDTO2" scope="prototype"></bean> <!-- prototype: 항상 새로운 인스턴스 생성  -->
+	
+	
 	
 </beans>
