@@ -60,6 +60,17 @@
 	
 	<bean id="sungJukDTO2" class="sample04.SungJukDTO2" scope="prototype"></bean> <!-- prototype: 항상 새로운 인스턴스 생성  -->
 	
+	<bean id="sungJukUpdate" class="sample04.SungJukUpdate" scope="prototype"> <!-- 성적dto를 담는 input도 scope를 prototype으로 바꿔야한다. -->
+		<property name="list" ref="arrayList"></property> 
+	</bean>
+	
+	<!-- <bean id="iterator" class="java.util.Iterator"></bean>
+	
+	<bean id="sungJukDelete" class="sample04.SungJukDelete" scope="prototype"> 성적dto를 담는 input도 scope를 prototype으로 바꿔야한다.
+		<property name="iterator" ref="iterator"></property> 
+		<property name="list" ref="arrayList"></property>  얘가 setList()함수를 말함.
+	</bean>
+	 -->
 	
 	
 </beans>
