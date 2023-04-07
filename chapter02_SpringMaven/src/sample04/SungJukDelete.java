@@ -5,10 +5,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import lombok.Setter;
 
+@Component
 public class SungJukDelete implements SungJuk {
-	@Setter
+	@Autowired
 	private List<SungJukDTO2> list;
 	
 	
