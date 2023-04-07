@@ -32,7 +32,9 @@ public class UserInsertService implements UserService {
 		userDTO.setPwd(pwd);
 		
 		//DB 
+		userDAO.write(userDTO); //데이터 가져가라 
 		
+		System.out.println(name + "님의 정보가 저장되었습니다.");
 		
 		
 		

@@ -1,10 +1,25 @@
 package user.service;
 
-public class UserSelectService implements UserService {
+import java.util.List;
 
+import lombok.Setter;
+import user.bean.UserDTO;
+import user.dao.UserDAO;
+
+public class UserSelectService implements UserService {
+	@Setter
+	private UserDAO userDAO;
+	
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
+		System.out.println();
+		
+		List<UserDTO> list = userDAO.getUserList();
+		for(UserDTO userDTO : list) {
+			System.out.println(userDTO.getName() + "\t"
+					+ userDTO.getId() + "\t"
+					+ userDTO.getPwd());
+		}
 
 	}
 
