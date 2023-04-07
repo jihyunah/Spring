@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import lombok.Setter;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Component
 public class SungJukDelete implements SungJuk {
 	@Autowired
+	@Qualifier("arrayList") //List가 부모로, 다형성으로 자식 arrayList라는 bean값 불러줄거라고 선언해야함. 
 	private List<SungJukDTO2> list;
 	
 	

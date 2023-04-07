@@ -70,6 +70,6 @@
 		<property name="list" ref="arrayList"></property>  <!-- 얘가 setList()함수를 말함. -->
 	</bean>
 	
-	
+	<!-- sample 05 -->
 	
 </beans>

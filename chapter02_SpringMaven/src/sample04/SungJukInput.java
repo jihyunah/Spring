@@ -1,26 +1,27 @@
 package sample04;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.jar.Attributes.Name;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import lombok.Setter;
 
 @Component
-@Scope("prototype")
+@Scope("prototype") //싱글톤 해제 
 public class SungJukInput implements SungJuk {
+	@Autowired //SungjukDTO2 타입을 찾아서 자동으로 매핑해라 
+	private SungJukDTO2 sungJukDTO2; 
 	@Autowired
-	private SungJukDTO2 sungJukDTO2; //생성자 or setter 사용해서 값을 얻어와야한다. 
-	@Autowired
+	@Qualifier("arrayList") //List가 부모로, 다형성으로 자식 arrayList라는 bean값 불러줄거라고 선언해야함. 
 	private List<SungJukDTO2> list;
 	
-//	public void setList(List<SungJukDTO2> list) {
-//		this.list = list;
-//	}
+
 	
 	@Override
 	public void execute() {
