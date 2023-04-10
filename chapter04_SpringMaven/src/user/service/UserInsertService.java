@@ -3,7 +3,8 @@ package user.service;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -11,40 +12,36 @@ import lombok.Setter;
 import user.bean.UserDTO;
 import user.dao.UserDAO;
 
-@Service //@Component로 써도 됨. service객체로 빈을 잡아주는거다. 
-@Scope("prototype")
+@Service //Component라고 사용 가능하다. @Service @Repository
 public class UserInsertService implements UserService {
-	@Autowired //생성된 bean들 중에서 UserDTO라는 타입을 찾아서 자동으로 매핑.
-	private UserDTO userDTO;
+	
+	@Autowired //생성된 빈들 중에서 UserDTO 타입을 찾아서 자동으로 매핑해라
+	private UserDTO userDTO = null;
 	@Autowired
-	private UserDAO userDAO; 
-	
-	
+	private UserDAO userDAO = null;
+
 	@Override
 	public void execute() {
-		Scanner scan = new Scanner(System.in);
-		System.out.println();
+		Scanner scanner = new Scanner(System.in);
 		
-		// 데이터 
-		System.out.print("이름 입력 : ");
-		String name = scan.next();
-		System.out.print("아이디 입력 : ");
-		String id = scan.next();
-		System.out.print("패스워드 입력 : ");
-		String pwd = scan.next();
+		//데이터
+		System.out.print("이름을 입력해주세요 : ");
+		String name = scanner.next();
+		
+		System.out.print("아이디를 입력해주세요 : ");
+		String id = scanner.next();
+		
+		System.out.print("비밀번호를 입력해주세요 : ");
+		String pwd = scanner.next();
 		
 		userDTO.setName(name);
 		userDTO.setId(id);
 		userDTO.setPwd(pwd);
 		
-		//DB 
-		userDAO.write(userDTO); //데이터 가져가라 
+		//DB
+		userDAO.write(userDTO);
 		
-		System.out.println(name + "님의 정보가 저장되었습니다.");
-		
-		
-		
-
+		System.out.println(name + "님의 데이터를 DB에 저장하였습니다.");
 	}
 
 }

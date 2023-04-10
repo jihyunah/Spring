@@ -3,6 +3,8 @@ package user.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import user.bean.UserDTO;
 
 public interface UserDAO {
@@ -13,8 +15,7 @@ public interface UserDAO {
 
 	public UserDTO getUser(String id);
 
-	public void update(Map<String, String> map);
-
+	void update(Map<String, String> map);
+	
 	public void delete(String id);
-
 }

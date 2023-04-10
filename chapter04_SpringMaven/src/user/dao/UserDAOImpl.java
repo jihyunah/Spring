@@ -1,16 +1,18 @@
 package user.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.apache.commons.collections4.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -19,62 +21,75 @@ import lombok.Setter;
 import user.bean.UserDTO;
 
 
-
-@Repository //@Component 써도 되지만, db와 연동하는 bean이기에 repository 씀. 
-public class UserDAOImpl extends NamedParameterJdbcDaoSupport implements UserDAO {
+@Repository //Repository는 DB와 연동된 것을 의미
+public class UserDAOImpl extends NamedParameterJdbcDaoSupport implements UserDAO{
 	
-	private DataSource dataSource;
 	
 	@Autowired
-	public void setDS(DataSource dataSource) { //final이라 override가 안되어서 다른 이름의 메소드로 함. 
-		setDataSource(dataSource); //JdbcDAoSupport(부모)에 있는 setDataSource() 메소드를 호출 
+	public void setDS(DataSource dataSource) { //setDataSource는 final로 override불가능하게 되어있어 
+												//이름을 바꿔 setDS라는 이름으로 바꾸어 사용한다.
+		setDataSource(dataSource);	//JdbcDaoSupport에 있는 setDataSource() 메소드를 호출
 	}
 	
 	@Override
-	public void write(UserDTO userDTO) {
-		String sql = "insert into usertable values(:name,:id,:pwd)"; //이렇게 ?자리에 이름을 부여할 수 있음.  -> 헷갈리는걸 방지함. 
+	public void write(UserDTO userDTO) { //NamedParameterJdbcDaoSupport는 Map으로만 받아야한다.
+		String sql = "insert into usertable values(:name,:id,:pwd)";
 		
-		Map<String, String> map = new HashedMap<String, String>(); //얘네는 꼭 map으로 들어와야함.
+		Map<String, String> map = new HashMap<String, String>();
 		map.put("name", userDTO.getName());
 		map.put("id", userDTO.getId());
 		map.put("pwd", userDTO.getPwd());
 		
-		getNamedParameterJdbcTemplate().update(sql, map); //insert없다. update로 입력과 수정 모두 한다. 
+		getNamedParameterJdbcTemplate().update(sql, map);
 		
 	}
+
 
 	@Override
 	public List<UserDTO> getUserList() {
 		String sql = "select * from usertable";
-		return getJdbcTemplate().query(sql, new BeanPropertyRowMapper<UserDTO>(UserDTO.class)); //한 줄당 dto에게 매핑을 해주겠다. 
+		return getJdbcTemplate().query(sql, new BeanPropertyRowMapper<UserDTO>(UserDTO.class)); 
+		//RowMapper은 한줄의 데이터값 중 하나의 데이터들으 한개의 데이터와 매핑하여 넣어준다.
 	}
-
+	
 	@Override
 	public UserDTO getUser(String id) {
-		String sql = "select * from usertable where id=?";
+		String sql = "select * from usertable where id=(:id)";
 		try {
-			return getJdbcTemplate().queryForObject(sql,
+			return getJdbcTemplate().queryForObject(
+					sql,
 					new BeanPropertyRowMapper<UserDTO>(UserDTO.class),
-					id); //queryForObject 하면 하나만 가져온다.
+					id
+				);
 			
-		} catch(EmptyResultDataAccessException e) {
+		}catch (EmptyResultDataAccessException e) {
 			return null;
 		}
-	}
-
-	@Override
-	public void update(Map<String, String> map) {
-		String sql = "update usertable set name=:name, pwd=:pwd where id=:id ";
-		getNamedParameterJdbcTemplate().update(sql, map); //sql과 map을 준다. 
+		
 		
 	}
+
+	@Override 
+	public void update(Map<String, String> map) {
+		String sql = "update usertable set name=(:name), pwd=(:pwd) where id=(:id)";
+		
+		getNamedParameterJdbcTemplate().update(sql, map);
+		
+	}
+
 
 	@Override
 	public void delete(String id) {
-		String sql = "delete usertable where id=:id";
-		getJdbcTemplate().update(sql, id); //delete가 없어서 update로 대신함.
+		String sql = "delete usertable where id=(:id)";
 		
+		/*Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		getNamedParameterJdbcTemplate().update(sql, map);*/
+		getJdbcTemplate().update(sql, id);
 	}
 
+
+	
 	
 }
+
