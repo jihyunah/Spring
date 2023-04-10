@@ -7,22 +7,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-
-<!-- Connection Pool & DataSource 설정  -->
-<!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-	<property name="username" value="c##java" />
-	<property name="password" value="1234" />
-</bean> -->
-
-<!-- property를 p 하나로 대체.  -->
-<!-- <bean id="dataSource" 
-	  class="org.apache.commons.dbcp2.BasicDataSource"
-	  p:driverClassName="oracle.jdbc.driver.OracleDriver"
-	  p:url="jdbc:oracle:thin:@localhost:1521:xe"
-	  p:username="c##java"
-	  p:password="1234"/> -->
 	  
 	<context:property-placeholder location="classpath:spring/db.properties" />
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
@@ -31,38 +15,51 @@
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
+	
+	<!-- SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property> <!-- Connection Pool 가져오기  -->
+		<property name="configLocation" value="classpath:spring/mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:user/dao/userMapper.xml" />
+	</bean>
+	
+	<!-- SqlSession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
 
+	<!-- Transaction : commit 하기 전까지의 sql 명령들 -->
+	<bean id="TransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
 
 <bean id="helloSpring" class="user.main.HelloSpring" />
 
+<bean id="userDAOMyBatis" class="user.dao.UserDAOMyBatis">
+    <property name="sqlSession" ref="sqlSession" />
+</bean>
+
 <bean id="userInsertService" class="user.service.UserInsertService">
 	<property name="userDTO" ref="userDTO"></property>
-	<property name="userDAO" ref="userDAOImpl"></property>
+	<property name="userDAO" ref="userDAOMyBatis"></property>
 </bean>
 
 <bean id="userSelectService" class="user.service.UserSelectService">
-	<property name="userDAO" ref="userDAOImpl" />
+	<property name="userDAO" ref="userDAOMyBatis" />
 </bean>
 <bean id="userUpdateService" class="user.service.UserUpdateService">
-	<property name="userDAO" ref="userDAOImpl"/>
+	<property name="userDAO" ref="userDAOMyBatis"/>
 </bean>
 <bean id="userDeleteService" class="user.service.UserDeleteService">
-	<property name="userDAO" ref="userDAOImpl"/>
+	<property name="userDAO" ref="userDAOMyBatis"/>
 </bean>
 
 <bean id="userDTO" class="user.bean.UserDTO" scope="prototype"></bean>
-<bean id="userDAOImpl" class="user.dao.UserDAOImpl">
-	<!-- <property name="jdbcTemplate" ref="jdbcTemplate" /> -->
-	<property name="dataSource" ref="dataSource" /> <!-- 부모인 jdbcDaoSupport에게 가서 찾음  -->
-</bean> <!-- DAO가 인터페이스여서 자식으로 잡음. -->
 
-
-<!-- 
-	* JdbcDaoSupport 상속하였으므로 jdbcTemplate을 빈으로 생성할 필요가 없다. 
-
-<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-	<constructor-arg ref="dataSource" />
+<!-- <bean id="userDAOMyBatis" class="user.dao.UserDAOMyBatis">
+    <property name="sqlSession" ref="sqlSession" />
 </bean> -->
-
+	
 
 </beans>
