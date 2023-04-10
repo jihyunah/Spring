@@ -43,8 +43,12 @@
 <bean id="userSelectService" class="user.service.UserSelectService">
 	<property name="userDAO" ref="userDAOImpl" />
 </bean>
-<bean id="userUpdateService" class="user.service.UserUpdateService"></bean>
-<bean id="userDeleteService" class="user.service.UserDeleteService"></bean>
+<bean id="userUpdateService" class="user.service.UserUpdateService">
+	<property name="userDAO" ref="userDAOImpl"/>
+</bean>
+<bean id="userDeleteService" class="user.service.UserDeleteService">
+	<property name="userDAO" ref="userDAOImpl"/>
+</bean>
 
 <bean id="userDTO" class="user.bean.UserDTO" scope="prototype"></bean>
 <bean id="userDAOImpl" class="user.dao.UserDAOImpl">
