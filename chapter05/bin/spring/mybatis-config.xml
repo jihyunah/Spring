@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>  <!-- config설정시작 -->
+	<properties resource="db.properties"></properties>
+	
+	<typeAliases>
+		<typeAlias type="user.bean.UserDTO" alias="user"/>  <!-- 별칭을 user로 잡자. -->
+	
+	</typeAliases>
+	
+	
+	<environments default="development">  <!-- environments 디폴트값은 development임. -->
+		<environment id="development">  
+			<transactionManager type="JDBC"/>  <!-- 드라이버는 jdbc로설정 -->
+			<dataSource type="POOLED"> <!-- Connection POOL생성 -->
+				<property name="driver" value="${jdbc.driver}"/>
+				<property name="url" value="${jdbc.url}"/>
+				<property name="username" value="${jdbc.username}"/>
+				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+			</environment>
+		</environments>
+		<mappers>  <!-- MyBatis에 연결될 mapper들의 위치를 설정. mapper는 여러개이므로 mappers임. -->
+			<mapper resource="user/dao/userMapper.xml"/>  <!-- myBatis에 연결될 mapper들의 위치정보를 설정 -->
+														   
+			
+		</mappers>
+	
+	
+</configuration>  <!-- config설정끝 -->
