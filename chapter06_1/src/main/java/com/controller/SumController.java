@@ -1,6 +1,9 @@
 package com.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,5 +48,25 @@ public class SumController {
 //		}
 		
 		@PostMapping(value="/result.do")
+		public String result(@RequestParam Map<String, String> map, ModelMap modelMap) { //modelMap에 실려 보내겠습니다.
+			modelMap.put("x", map.get("x"));
+			modelMap.put("y", map.get("y"));
+			return "sum/result";
+		}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
