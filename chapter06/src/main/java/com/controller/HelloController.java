@@ -13,7 +13,8 @@ public class HelloController {
 	public ModelAndView hello() { //여기서 사용자가 만든 콜백 메소드 . 호출안해도 Spring이 자동호출해줌.
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("result", "Hello Spring !!");
-		mav.setViewName("hello"); //파일명 지정
+		//mav.setViewName("hello"); //파일명 지정
+		mav.setViewName("/view/hello"); //xml 파일에서 prefix를 없앴기 때문에 폴더명까지 지정.
 		
 		return mav; //다시 dispatcher로 간다. 
 	}
