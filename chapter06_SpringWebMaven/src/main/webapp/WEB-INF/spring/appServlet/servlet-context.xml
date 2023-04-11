@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- web에 jsp파일 띄우는게 resolver -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="prefix" value="/WEB-INF/" /> <!-- 머리말 정해준거임. -->
+		<property name="suffix" value=".jsp" /> <!-- 꼬리말 정해준거임. -->
+	</bean>
+	
+	<context:component-scan base-package="main.controller" /> <!-- bean으로 설정해도 되지만, 어노테이션으로 생성한다 라는 것이다.  -->
+
+</beans>
