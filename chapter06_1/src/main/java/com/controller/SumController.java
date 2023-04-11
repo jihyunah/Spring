@@ -3,13 +3,17 @@ package com.controller;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.bean.SumDTO;
 
 @Controller
 public class SumController {
@@ -47,13 +51,19 @@ public class SumController {
 //			return mav; // => /WEB-INF/sum/result.jsp
 //		}
 		
+//		@PostMapping(value="/result.do")
+//		public String result(@RequestParam Map<String, String> map, ModelMap modelMap) { //modelMap에 실려 보내겠습니다.
+//			modelMap.put("x", map.get("x"));
+//			modelMap.put("y", map.get("y"));
+//			return "sum/result";
+//		}
+	
 		@PostMapping(value="/result.do")
-		public String result(@RequestParam Map<String, String> map, ModelMap modelMap) { //modelMap에 실려 보내겠습니다.
-			modelMap.put("x", map.get("x"));
-			modelMap.put("y", map.get("y"));
+		public String result(@ModelAttribute SumDTO sumDTO, Model model) { //modelMap에 실려 보내겠습니다.
+			model.addAttribute("x", sumDTO.getX());
+			model.addAttribute("y", sumDTO.getY());
 			return "sum/result";
 		}
-	
 }
 
 
