@@ -3169,3 +3169,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact net.sf.json-l
 2023-04-13 10:27:01,833 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ijihyeon/Downloads/chapter06_SpringWebMaven/src/main/resources
 2023-04-13 10:27:01,835 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2023-04-13 10:27:01,835 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ijihyeon/Downloads/chapter06_SpringWebMaven/src/test/resources
+2023-04-13 10:59:16,762 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-13 10:59:16,770 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ijihyeon/Downloads/chapter06_SpringWebMaven/src/main/resources
+2023-04-13 10:59:16,772 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-04-13 10:59:16,773 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ijihyeon/Downloads/chapter06_SpringWebMaven/src/test/resources
