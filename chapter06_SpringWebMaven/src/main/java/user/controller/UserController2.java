@@ -3,10 +3,13 @@ package user.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.collections4.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -33,6 +36,12 @@ public class UserController2 {
 	@GetMapping(value="uploadForm")
 	public String uploadForm() { //주소로 가라. 
 		return "user/uploadForm";
+	}
+	
+	//파일 업로드 
+	@GetMapping(value="uploadForm_AJax")
+	public String uploadForm_AJax() { //주소로 가라. 
+		return "user/uploadForm_AJax";
 	}
 
 //// -----------------name="img" 1개일 때 ----------------------
@@ -125,6 +134,8 @@ public class UserController2 {
 			String fileName; 
 			File file; //파일 생성 
 			
+			List<String> fileNameList = new ArrayList<String>();
+			
 			for(MultipartFile img : list) {
 				fileName = img.getOriginalFilename();
 				file = new File(filePath, fileName);
@@ -135,10 +146,33 @@ public class UserController2 {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} //파일 이동 
+				
+				//DB
+				fileNameList.add(fileName);
+				
 			} //for
 				
+			userService.upload(userImageDTO, fileNameList);
+			
 			return "이미지 등록 완료";	
 					
 			}
+		
+		//파일 업로드 한거 출력 리스트 
+		@GetMapping(value="uploadForm_AJax_list")
+		public String uploadForm_AJax_list() {
+			
+//			List<UserDTO> list = userService.getUserList();
+//			return list
+			
+			return "user/uploadForm_AJax_list";
+		}
+		
+		@PostMapping(value = "getUploadForm_AJax_list")
+		@ResponseBody
+		public List<UserImageDTO> getUploadForm_AJax_list(){
+			return userService.getUploadForm_AJax_list();
+		}
+		
 
 }

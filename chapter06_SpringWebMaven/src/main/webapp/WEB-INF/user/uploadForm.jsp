@@ -72,7 +72,8 @@ function readURL(input){
 	reader.onload = function(e){	//읽어들여라 
 		$('#showImg').attr('src', e.target.result); //e.target => event 발생한 아이의 결과를 가져와라 
 	} 
-	}
+	reader.readAsDataURL(input.files[0]); //이렇게 하면 첫번째 사진만 불려 들어올 수 있음. 
+}
 
 
 </script>

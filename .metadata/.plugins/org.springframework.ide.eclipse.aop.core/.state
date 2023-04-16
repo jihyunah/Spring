@@ -6,4 +6,5 @@
 <aop-project name="chapter04"/>
 <aop-project name="chapter06"/>
 <aop-project name="chapter06_SpringWebMaven"/>
+<aop-project name="springProject"/>
 </aop-reference-model>
