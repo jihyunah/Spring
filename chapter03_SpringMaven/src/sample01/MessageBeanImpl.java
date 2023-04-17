@@ -1,20 +1,21 @@
 package sample01;
 
 import org.aspectj.lang.annotation.Before;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-import lombok.Setter;
 
+@Component
 public class MessageBeanImpl implements MessageBean {
 	//MessageBeanImpl이 타겟 클래스. 
 	// override 된 함수들이 조인 포인트.
 	// 적용될 함수 위에 두개만이 포인트 컷임.
 	
-	@Setter
 	private String str;
 
-//	public void setStr(String str) {
-//		this.str = str;
-//	}
+	public void setStr(@Value("Have a nice day!!") String str) {
+		this.str = str;
+	}
 
 	@Override
 	public void showPrintBefore() {
