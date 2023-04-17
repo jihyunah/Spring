@@ -18,11 +18,14 @@
 	<aop:pointcut expression="execution(public void sample01.MessageBeanImpl.*Before())"  
 				  id="beforeMethod"/> <!-- 이 이름의 함수가 실행될 때  -->
 	<aop:pointcut expression="execution(public * *.*.*After())"  
-				  id="afterMethod"/> <!-- 아이디를 지정해줌. , 이 이름의 함수가 실행될 때  -->			  
+				  id="afterMethod"/> <!-- 아이디를 지정해줌. , 이 이름의 함수가 실행될 때  -->	
+	<aop:pointcut expression="execution(public * *.MessageBeanImpl.*Print(..))"  
+				  id="aroundMethod"/>		  
 	
 	<aop:aspect ref="loggingAdvice"> <!-- 공통관심사항 클래스 어디냐  -->
 		<aop:before method="beforeTrace" pointcut-ref="beforeMethod"/>
 		<aop:after method="afterTrace" pointcut-ref="afterMethod"/>
+		<aop:around method="trace" pointcut-ref="aroundMethod"/>
 	</aop:aspect> 
 
 </aop:config>

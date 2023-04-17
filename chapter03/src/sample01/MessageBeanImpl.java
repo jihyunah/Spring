@@ -60,7 +60,7 @@ public class MessageBeanImpl implements MessageBean {
 	}
 
 	@Override
-	public void viePrint() {
+	public void viewPrint() {
 		try {
 			Thread.sleep(1000); //1초 - 단위 1/1000초
 		} catch (InterruptedException e) {

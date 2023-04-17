@@ -13,16 +13,16 @@ public class LoggingAdvice {
 	}
 	
 	//Around
-	public void trace(ProceedingJoinPoint joinPoint) {
+	public void trace(ProceedingJoinPoint joinPoint) throws Throwable {
 		//앞에 삽입될 코드 
-		
+		System.out.println("하늘");
 		
 		
 		//핵심 코드 호출
-		
+		joinPoint.proceed();
 		
 		
 		//뒤에 삽입될 코드
-		System.out.println();
+		System.out.println("땅");
 	}
 }

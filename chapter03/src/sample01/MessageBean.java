@@ -8,7 +8,7 @@ public interface MessageBean {
 	public void viewPrintAfter();
 	
 	public void showPrint();
-	public void viePrint();
+	public void viewPrint();
 	
 	public void display();
 }
