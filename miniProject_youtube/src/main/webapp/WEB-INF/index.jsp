@@ -17,6 +17,9 @@
 	<p><a href="/chapter06_SpringWebMaven/user/uploadForm">업로드(DB로 X)</a></p>
 	<p><a href="/chapter06_SpringWebMaven/user/uploadForm_AJax">업로드_AJax</a></p>
 	<p><a href="/chapter06_SpringWebMaven/user/uploadForm_AJax_list">이미지 출력</a></p>
+	<br>
+	<p><a href="/chapter06_SpringWebMaven/youtube/boardlist">유튜브 커뮤니티 board</a></p>
+	
 </h4>
 </body>
 </html>
